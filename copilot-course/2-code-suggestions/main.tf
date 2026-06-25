@@ -41,8 +41,9 @@ resource "aws_eks_cluster" "dev-cluster" {
 
 # creating a new vpc for production workloads
 resource "aws_vpc" "prd-vpc" {
-  cidr_block = "
-  
+  cidr_block = "10.0.0.0/16"
+}
+
 resource "aws_subnet" "prd-pub-subnet-1" {
   vpc_id            = aws_vpc.prd-vpc.id
   cidr_block        = "10.0.0.0/24"
